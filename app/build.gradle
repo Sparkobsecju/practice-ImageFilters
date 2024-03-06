@@ -1,0 +1,109 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.imagefilters'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.imagefilters"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    // make screen UI available
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // retrofit for free music
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    // gson converter for free music
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // picasso for converting image link given into API
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+
+    // Scalable size unit
+    /*
+    * SDP - a scalable size unit
+    * An android lib that provides a new size unit - sdp (scalable dp). This size unit scales
+    * with this screen size. It van help Android developers with supporting multiple screens.
+    * */
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    /*
+    * SSP - a scalable size unit for texts
+    * An android lib that provides a new size unit - ssp (scalable sp). This size scales with
+    * the screen size based on the sp size unit (for texts). It can help Android developers with
+    * supporting multiple screens.
+    */
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+
+    // Rounded Image View
+    /*
+    * RoundedImageView
+    * A fast ImageView (and Drawable) that supports rounded corners (and ovals or circle). It supports
+    * many additional features including ovals, rounded rectangles, ScaleTypes and TileModes.
+    */
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // GPU image
+    /*
+    * GPUImage for Android
+    * Android filters based on OpenGL. Android developers can use it for image processing.
+    * */
+    implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
+
+    // Koin - Dependency injection
+    /*
+    * Koin
+    * A pragmatic lightweight dependency injection framework for Kotlin developers.
+    * */
+    // dependency 1 (use 1 rather than the deprecated 2)
+    implementation 'io.insert-koin:koin-android:3.0.1'
+    ////// implementation 'org.koin:koin-android:3.1.2'
+    // depencency 2
+    // implementation 'org.koin:koin-androidx-viewmodel:3.1.2'
+
+
+    // ViewModel
+    /*
+    * ViewModel
+    * The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
+    * */
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+}
